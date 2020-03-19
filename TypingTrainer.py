@@ -1,13 +1,15 @@
-from random import choice
-from tkinter import Tk
-from tkinter.filedialog import askopenfilename
-from matplotlib.dates import datestr2num
-from scipy import stats
-import matplotlib.pyplot as plt
 import datetime
 import linecache
 import time
+from os import path
+from random import choice
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
+
+import matplotlib.pyplot as plt
 import numpy
+from matplotlib.dates import datestr2num
+from scipy import stats
 
 
 # Compares two strings taking in count small errors
@@ -86,8 +88,13 @@ def del_word():
 
 def add_score(score):
     today = str(datetime.date.today())
-    with open("scores.txt", "a") as f:
-        f.write(''.join([today, ';', score, ';\n']))
+
+    if path.isfile("scores.txt"):
+        with open("scores.txt", "a") as f:
+            f.write(''.join([today, ';', score, ';\n']))
+    else:
+        with open("scores.txt", "+a") as f:
+            f.write(''.join([today, ';', score, ';\n']))
 
 
 # main fuction for gameplay
@@ -231,7 +238,7 @@ def analyze():
             if i > 0:
                 if day != previous_day+1:
                     if day == previous_day:
-                        i-=1
+                        i -= 1
                         lst_scores[i+1] = float("{0:.2f}".format((lst_scores[i+1]+lst_scores[i])/2))
                         lst_scores.pop(i)
                         lst_dates.pop(i)
@@ -264,7 +271,7 @@ def analyze():
     fig, ax = plt.subplots()
     fig.autofmt_xdate()
     plt.plot_date(lst_dates, lst_scores, 'g-')
-    plt.yticks(numpy.arange(min(lst_scores), max(lst_scores), 100))
+    plt.yticks(numpy.arange(min(lst_scores), max(lst_scores), 250))
     slope, intercept, r_value, p_value, std_err = stats.linregress(lst_dates, lst_scores)
     y = [slope * x + intercept for x in lst_dates]
     ax.plot(lst_dates, y, "r--")
@@ -318,10 +325,10 @@ def show_highscores():
 # operational part of the program
 while 1:
     dic = {"P": game, "S": show_highscores, "N": add_word, "D": del_word,
-           "A": analyze, "V": print_volume, "I": imp_storage, "E": exit}
+           "A": analyze, "V": print_volume, "I": imp_storage, "C": clear, "E": exit}
 
     command = input('Play: "P"\nHighscores: "S"\nNew word: "N"\nDelete word: "D"'
-                    '\nAnalyze: "A"\nCheck Volume: "V"\nImport Storage: "I"\nEnd: "E"\n')
+                    '\nAnalyze: "A"\nCheck Volume: "V"\nImport Storage: "I"\nClear Storage: "C"\nEnd: "E"\n')
 
     if command.upper() in dic:
         dic[command.upper()]()

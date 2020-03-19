@@ -178,7 +178,7 @@
 178;warpath;1;
 179;wayfarer;1;
 180;takeover;1;
-181;repairman;2;
+181;repairman;3;
 182;turnoff;1;
 183;caveman;1;
 184;headquarters;1;
@@ -395,7 +395,7 @@
 395;showoff;1;
 396;aboveboard;1;
 397;playboy;1;
-398;weatherproof;1;
+398;weatherproof;2;
 399;highball;2;
 400;carsick;1;
 401;honeysuckle;1;
@@ -426,7 +426,7 @@
 426;noteworthy;1;
 427;aircraft;2;
 428;handbook;1;
-429;warehouse;1;
+429;warehouse;2;
 430;lifework;1;
 431;handmade;1;
 432;waterpower;1;
