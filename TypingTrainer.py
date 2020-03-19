@@ -216,12 +216,7 @@ def analyze():
 
     i = 0
     while i < len(lst_dates):
-        print(range(len(lst_dates)))
-        print(lst_dates)
-        print(i)
         dates_splitted = [letter for letter in lst_dates[i]]
-        print(dates_splitted)
-        time.sleep(0.5)
 
         stryear = ''.join(dates_splitted[:4])
         strmonth = ''.join(dates_splitted[5:7])
