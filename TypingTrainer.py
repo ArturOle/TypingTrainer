@@ -104,6 +104,7 @@ def game():
     print("Repeat the sentence the fastest you can!")
     volume = volume_storage()
     weighteddecision = weightedseed()
+
     if volume == 0:
         print("Storage is empty!")
     else:
@@ -111,9 +112,9 @@ def game():
         while i <= 5:
             index = choice(weighteddecision)
             line = linecache.getline("storage.txt", index)
-
             mark = 0
             lst = []
+
             for vovel in line:
                 if vovel == ";":
                     mark += 1
@@ -121,6 +122,7 @@ def game():
                     while mark == 1:
                         lst.append(vovel)
                         break
+
             string = ''.join(lst)
             print("Round#" + str(i))
             start = time.time()
