@@ -122,8 +122,6 @@ def game():
                         lst.append(vovel)
                         break
             string = ''.join(lst)
-
-            x = len(string)
             print("Round#" + str(i))
             start = time.time()
             round = input(string+": \n")
