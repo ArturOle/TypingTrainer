@@ -148,7 +148,7 @@
 148;wavelike;1;
 149;postcard;1;
 150;somewhat;1;
-151;wallpaper;1;
+151;wallpaper;2;
 152;riverbanks;1;
 153;weekend;1;
 154;thunderbolt;1;
@@ -218,7 +218,7 @@
 218;bookmark;1;
 219;firewater;1;
 220;pancake;1;
-221;forewarn;1;
+221;forewarn;2;
 222;fishmonger;1;
 223;uppercut;1;
 224;hereby;1;
@@ -293,7 +293,7 @@
 293;standoff;1;
 294;anytime;1;
 295;superman;1;
-296;whatsoever;1;
+296;whatsoever;2;
 297;takeoff;1;
 298;backtrack;1;
 299;anyhow;1;
