@@ -277,7 +277,7 @@
 277;blacktop;1;
 278;headdress;1;
 279;foremost;1;
-280;courtyard;1;
+280;courtyard;2;
 281;bowlegs;1;
 282;spacewalk;1;
 283;paycheck;1;
