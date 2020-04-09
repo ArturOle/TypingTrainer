@@ -5,7 +5,7 @@ TrainingTrainer( later "TT") is Python console program with sorage manipulation,
 ## Getting Started
 
 Download and open with your favorite Python compiler. Save "storage.txt" in the same folder for full functionality. 
-If you want to use all functions download also "scores.txt".
+If you want to use all functions download also "storage.txt".
 
 ### Prerequisites
 
