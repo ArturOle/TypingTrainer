@@ -1,15 +1,14 @@
-import datetime
-import linecache
-import time
 from os import path
 from random import choice
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
-
-import matplotlib.pyplot as plt
-import numpy
 from matplotlib.dates import datestr2num
 from scipy import stats
+import matplotlib.pyplot as plt
+import numpy
+import datetime
+import linecache
+import time
 
 
 # Compares two strings taking in count small errors
