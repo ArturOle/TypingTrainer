@@ -52,7 +52,7 @@ def add_word():
         phrase = input("Enter new phrase: ")
         i = volume_storage()
 
-        with open("storage.txt", "a") as file:
+        with open("storage.csv", "a") as file:
             new_word = ";".join([str(i+1), phrase, "1", "\n"])
             file.write(new_word)
 
@@ -70,10 +70,10 @@ def del_word():
             break
         print("You need to enter the intiger...\n")
 
-    with open("storage.txt", "r") as file:
+    with open("storage.csv", "r") as file:
         lines = file.readlines()
 
-    with open("storage.txt", "w") as file:
+    with open("storage.csv", "w") as file:
         for line in lines:
             line = line.split(";")
 
@@ -110,7 +110,7 @@ def game():
         i = 1
         while i <= 5:
             index = choice(weighteddecision)
-            line = linecache.getline("storage.txt", index)
+            line = linecache.getline("storageM.csv", index)
             mark = 0
             lst = []
 
@@ -136,10 +136,10 @@ def game():
                 accuracy.append(compare(string, round))
                 print(compare(string, round))
                 if compare(string, round) != 1:
-                    with open("storage.txt", "r") as f:
+                    with open("storage.csv", "r") as f:
                         data = f.readlines()
 
-                    with open("storage.txt", "w") as f:
+                    with open("storage.csv", "w") as f:
                         for line in data:
                             whole = line.split(";")
                             if string == whole[1]:
@@ -158,7 +158,7 @@ def game():
 
 # Check volume of storage
 def volume_storage():
-    with open("storage.txt", "r") as file:
+    with open("storage.csv", "r") as file:
         i = 0
         for line in file:
             i += 1
@@ -177,7 +177,7 @@ def imp_storage():
           "\n\t2# words/phrases listed in up-down manner without any semicolons")
     Tk().withdraw()
     file = askopenfilename()
-    with open("storage.txt", "w+") as primal:
+    with open("storageM.csv", "w+") as primal:
         with open("{}".format(file), "r") as imported:
             semicolon = 0
             index = 0
@@ -281,7 +281,7 @@ def analyze():
 def clear():
     command = input("Clear the storage press: 'S'\nClear the highscores press: 'H'\nCancel press: 'C'")
     if command.upper() == "S":
-        with open("storage.txt", "w+") as file:
+        with open("storage.csv", "w+") as file:
             pass
     elif command.upper() == "H":
         with open("scores.txt", "w+") as file:
@@ -290,7 +290,7 @@ def clear():
 
 def weightedseed():
     weightedrange = []
-    with open("storage.txt", "r") as f:
+    with open("storage.csv", "r") as f:
         lines = f.readlines()
         for line in lines:
             whole = line.split(";")
